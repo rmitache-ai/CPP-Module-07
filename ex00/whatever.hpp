@@ -1,14 +1,16 @@
 #pragma once
 
+#define WHATEVER_HPP
+
 #include <iostream>
 
-template <class T> void swap(T& a, T& b) {
+template <typename T> void swap(T& a, T& b) {
 	T temp = a;
 	a      = b;
 	b      = temp;
 }
 
-template <class T> T min(T a, T b) {
+template <typename T> T min(T a, T b) {
 	if (a > b) {
 		return b;
 	}
@@ -18,7 +20,7 @@ template <class T> T min(T a, T b) {
 	return a;
 }
 
-template <class T> T max(T a, T b) {
+template <typename T> T max(T a, T b) {
 	if (a > b) {
 		return a;
 	}

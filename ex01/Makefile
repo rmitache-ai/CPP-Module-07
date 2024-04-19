@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/CMakeFiles /workspaces/nix-dev/CPP-Module-07//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/CMakeFiles /workspaces/nix-dev/CPP-Module-07/ex01//CMakeFiles/progress.marks
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex01/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex01/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex01/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex01/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named whatever
+# Convenience name for target.
+ex01/CMakeFiles/iter.dir/rule:
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex01/CMakeFiles/iter.dir/rule
+.PHONY : ex01/CMakeFiles/iter.dir/rule
 
-# Build rule for target.
-whatever: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 whatever
-.PHONY : whatever
-
-# fast build rule for target.
-whatever/fast:
-	$(MAKE) $(MAKESILENT) -f ex00/CMakeFiles/whatever.dir/build.make ex00/CMakeFiles/whatever.dir/build
-.PHONY : whatever/fast
-
-#=============================================================================
-# Target rules for targets named iter
-
-# Build rule for target.
-iter: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 iter
+# Convenience name for target.
+iter: ex01/CMakeFiles/iter.dir/rule
 .PHONY : iter
 
 # fast build rule for target.
 iter/fast:
-	$(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/build
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/build
 .PHONY : iter/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -151,7 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... iter"
-	@echo "... whatever"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -163,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
