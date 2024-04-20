@@ -2,7 +2,6 @@
 
 #include <cstddef>
 #define ITER_HPP
-#include <iostream>
 
 template <typename T>
 /**
