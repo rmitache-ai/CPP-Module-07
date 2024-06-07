@@ -12,32 +12,37 @@ private:
 
 public:
 	Array(void)
-		: _sizeOfArray(0) {
-		this->_array = new T;
+		: _sizeOfArray(0), _array(new T) {
 		std::cout << "Default constructor called" << std::endl;
 	}
 
 	Array(unsigned int n)
-		: _sizeOfArray(n) {
-		this->_array = new T[_sizeOfArray];
-		std::cout << "Costructor with a size of " << n
+		: _array(new T[n]), _sizeOfArray(n) {
+		std::cout << "Costructor with a size of " << _array
 				  << " called" << std::endl;
 	}
-
 	Array(Array& copy)
-		: _array(copy._array), _sizeOfArray(copy._sizeOfArray) {
+		: _array(new T[copy.size()]), _sizeOfArray(copy.size()) {
+		for (unsigned int i = 0; i < _sizeOfArray; i++) {
+			_array[i] = copy._array[i];
+		}
 		std::cout << "Copy constructor called" << std::endl;
-	}
+	};
 
-	Array& operator=(Array const& other) {
-		this->_array       = other._array;
-		this->_sizeOfArray = other._sizeOfArray;
-		std::cout << "Assign operator called" << std::endl;
+	Array& operator=(const Array& copy) {
+		if (this != &copy) {
+			delete[] _array;
+				_sizeOfArray = copy._sizeOfArray;
+				for (unsigned int i = 0; i < _sizeOfArray; i++) {
+					_array[i] = copy._array[i];
+			}
+		}
+		std::cout << "Assignment operator called" << std::endl;
 		return *this;
 	}
 
 	T& operator[](unsigned int index) {
-		if (index > _sizeOfArray) {
+		if (index >= _sizeOfArray) {
 			throw outOfRangeException();
 		}
 		return (this->_array[index]);
@@ -55,5 +60,8 @@ public:
 		return _sizeOfArray;
 	}
 
-	~Array() { std::cout << "Destructor called" << std::endl; }
+	~Array() {
+		delete[] _array;
+		std::cout << "Destructor called" << std::endl;
+	}
 };

@@ -16,5 +16,6 @@ int main() {
 	std::cout << "------ Out of Range Test ------\n"
 			  << std::endl;
 	numbers[INDEX_OUT_OF_RANGE];
+	delete a;
 	return 0;
 }
