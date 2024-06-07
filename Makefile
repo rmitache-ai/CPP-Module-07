@@ -142,6 +142,19 @@ iter/fast:
 	$(MAKE) $(MAKESILENT) -f ex01/CMakeFiles/iter.dir/build.make ex01/CMakeFiles/iter.dir/build
 .PHONY : iter/fast
 
+#=============================================================================
+# Target rules for targets named array
+
+# Build rule for target.
+array: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 array
+.PHONY : array
+
+# fast build rule for target.
+array/fast:
+	$(MAKE) $(MAKESILENT) -f ex02/CMakeFiles/array.dir/build.make ex02/CMakeFiles/array.dir/build
+.PHONY : array/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,6 +163,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... array"
 	@echo "... iter"
 	@echo "... whatever"
 .PHONY : help

@@ -57,23 +57,13 @@ RM = /opt/cmake-3.28.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/nix-dev/CPP-Module-07/ex02
+CMAKE_SOURCE_DIR = /workspaces/nix-dev/CPP-Module-07
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/nix-dev/CPP-Module-07/ex02
+CMAKE_BINARY_DIR = /workspaces/nix-dev/CPP-Module-07
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/cmake-3.28.1/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -97,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/ex02/CMakeFiles /workspaces/nix-dev/CPP-Module-07/ex02//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/ex02/CMakeFiles 0
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/CMakeFiles /workspaces/nix-dev/CPP-Module-07/ex02//CMakeFiles/progress.marks
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/nix-dev/CPP-Module-07/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,62 +103,39 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named array
+# Convenience name for target.
+ex02/CMakeFiles/array.dir/rule:
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02/CMakeFiles/array.dir/rule
+.PHONY : ex02/CMakeFiles/array.dir/rule
 
-# Build rule for target.
-array: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 array
+# Convenience name for target.
+array: ex02/CMakeFiles/array.dir/rule
 .PHONY : array
 
 # fast build rule for target.
 array/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/build
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex02/CMakeFiles/array.dir/build.make ex02/CMakeFiles/array.dir/build
 .PHONY : array/fast
-
-Array.o: Array.cpp.o
-.PHONY : Array.o
-
-# target to build an object file
-Array.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/Array.cpp.o
-.PHONY : Array.cpp.o
-
-Array.i: Array.cpp.i
-.PHONY : Array.i
-
-# target to preprocess a source file
-Array.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/Array.cpp.i
-.PHONY : Array.cpp.i
-
-Array.s: Array.cpp.s
-.PHONY : Array.s
-
-# target to generate assembly for a file
-Array.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/Array.cpp.s
-.PHONY : Array.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/main.cpp.o
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex02/CMakeFiles/array.dir/build.make ex02/CMakeFiles/array.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -176,7 +143,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/main.cpp.i
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex02/CMakeFiles/array.dir/build.make ex02/CMakeFiles/array.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -184,7 +151,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/array.dir/build.make CMakeFiles/array.dir/main.cpp.s
+	cd /workspaces/nix-dev/CPP-Module-07 && $(MAKE) $(MAKESILENT) -f ex02/CMakeFiles/array.dir/build.make ex02/CMakeFiles/array.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -195,11 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... array"
-	@echo "... Array.o"
-	@echo "... Array.i"
-	@echo "... Array.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -214,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/nix-dev/CPP-Module-07 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
