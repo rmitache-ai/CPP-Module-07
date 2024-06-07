@@ -18,7 +18,7 @@ public:
 
 	Array(unsigned int n)
 		: _array(new T[n]), _sizeOfArray(n) {
-		std::cout << "Costructor with a size of " << _array
+		std::cout << "Costructor with a size of " << _sizeOfArray
 				  << " called" << std::endl;
 	}
 	Array(Array& copy)
@@ -65,3 +65,4 @@ public:
 		std::cout << "Destructor called" << std::endl;
 	}
 };
+
